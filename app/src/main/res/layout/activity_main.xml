@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/material_dynamic_neutral10"
     tools:context=".activity.MainActivity">
 
@@ -111,6 +111,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
+        android:onClick="clickZero"
         android:text="0"
         android:textSize="34sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonVirgula"
