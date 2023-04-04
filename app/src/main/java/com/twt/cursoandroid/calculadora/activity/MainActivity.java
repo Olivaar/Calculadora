@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.twt.cursoandroid.calculadora.R;
+import com.twt.cursoandroid.calculadora.model.Calculo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private String number2 = "";
     private String operador;
     private Double num1, num2, resultado;
+
+    private Calculo calculo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +49,12 @@ public class MainActivity extends AppCompatActivity {
         buttonDiv = findViewById(R.id.buttonDiv);
         buttonParenteses = findViewById(R.id.buttonParenteses);
         buttonC = findViewById(R.id.buttonC);
+
+        calculo = new Calculo(num1, num2, operador);
     }
 
 
-    //Testar condição após criar métodos de calculo
+    //TODO Testar condição após criar métodos de calculo
     public void clickSoma(View view){
         if (resultado != null){
             operador = "+";
