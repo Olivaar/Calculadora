@@ -12,7 +12,6 @@
         android:layout_width="379dp"
         android:layout_height="82dp"
         android:background="@color/grey21"
-        android:text="VISOR"
         android:textAlignment="viewEnd"
         android:textColor="@color/Lime"
         android:textSize="48sp"

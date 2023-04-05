@@ -66,59 +66,74 @@ public class MainActivity extends AppCompatActivity {
             calculo = new Calculo(num1, num2, operador);
             calculo.calcular();
             resultado = calculo.getResultado().toString();
-            System.out.println(resultado);
+            textResposta.setText(resultado);
         } else {
             resul = Double.valueOf(resultado);
             num3 = Double.valueOf(number3);
             calculo = new Calculo(resul, num3, operador);
             calculo.calcular();
             resultado = calculo.getResultado().toString();
-            System.out.println(resultado);
+            textResposta.setText(resultado);
         }
-
-        System.out.println(resultado);
     }
 
-
-    //TODO Testar condição após criar métodos de calculo
+    //TODO Adcionar condicional para somar apenas 2 números de cada vez!
     public void clickSoma(View view){
-        if (resultado != null){
             operador = "+";
             String visor = textVisor.getText().toString();
-            textVisor.setText(visor+ " + ");
-        }else{
-            operador = "+";
-            String visor = textVisor.getText().toString();
-            textVisor.setText(visor+ " + ");
-        }
+
+            if (resultado != null){
+                textVisor.setText(resultado+" + ");
+                textResposta.setText("");
+            }else{
+                textVisor.setText(visor+ " + ");
+            }
     }
 
     public void clickSubtracao(View view){
         operador = "-";
         String visor = textVisor.getText().toString();
-        textVisor.setText(visor+ " - ");
+
+        if (resultado != null){
+            textVisor.setText(resultado+" - ");
+            textResposta.setText("");
+        }else{
+            textVisor.setText(visor+ " - ");
+        }
     }
 
     public void clickMultiplicacao(View view){
         operador = "*";
         String visor = textVisor.getText().toString();
-        textVisor.setText(visor+ " x ");
+
+        if (resultado != null){
+            textVisor.setText(resultado+" x ");
+            textResposta.setText("");
+        }else{
+            textVisor.setText(visor+ " x ");
+        }
     }
 
     public void clickDivisao(View view){
         operador = "/";
         String visor = textVisor.getText().toString();
-        textVisor.setText(visor+ " / ");
+
+        if (resultado != null){
+            textVisor.setText(resultado+" / ");
+            textResposta.setText("");
+        }else{
+            textVisor.setText(visor+ " / ");
+        }
     }
 
     public void clickZero(View view){
 
         if (operador == null && resultado == null){
-            number1 = "0";
+            number1 += "0";
         }else if (operador != null && resultado == null){
-            number2 = "0";
+            number2 += "0";
         }else if (operador != null && resultado != null){
-            number3 = "0";
+            number3 += "0";
         }
 
         //Método de validação de números antes do terceiro argumento
@@ -135,11 +150,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickUm(View view){
         if (operador == null && resultado == null){
-            number1 = "1";
+            number1 += "1";
         }else if (operador != null && resultado == null){
-            number2 = "1";
+            number2 += "1";
         }else if (operador != null && resultado != null){
-            number3 = "1";
+            number3 += "1";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "1");
@@ -147,11 +162,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickDois(View view){
         if (operador == null && resultado == null){
-            number1 = "2";
+            number1 += "2";
         }else if (operador != null && resultado == null){
-            number2 = "2";
+            number2 += "2";
         }else if (operador != null && resultado != null){
-            number3 = "2";
+            number3 += "2";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "2");
@@ -159,11 +174,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickTres(View view){
         if (operador == null && resultado == null){
-            number1 = "3";
+            number1 += "3";
         }else if (operador != null && resultado == null){
-            number2 = "3";
+            number2 += "3";
         }else if (operador != null && resultado != null){
-            number3 = "3";
+            number3 += "3";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "3");
@@ -171,11 +186,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickQuatro(View view){
         if (operador == null && resultado == null){
-            number1 = "4";
+            number1 += "4";
         }else if (operador != null && resultado == null){
-            number2 = "4";
+            number2 += "4";
         }else if (operador != null && resultado != null){
-            number3 = "4";
+            number3 += "4";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "4");
@@ -183,11 +198,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickCinco(View view){
         if (operador == null && resultado == null){
-            number1 = "5";
+            number1 += "5";
         }else if (operador != null && resultado == null){
-            number2 = "5";
+            number2 += "5";
         }else if (operador != null && resultado != null){
-            number3 = "5";
+            number3 += "5";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "5");
@@ -195,11 +210,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickSeis(View view){
         if (operador == null && resultado == null){
-            number1 = "6";
+            number1 += "6";
         }else if (operador != null && resultado == null){
-            number2 = "6";
+            number2 += "6";
         }else if (operador != null && resultado != null){
-            number3 = "6";
+            number3 += "6";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "6");
@@ -207,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickSete(View view){
         if (operador == null && resultado == null){
-            number1 = "7";
+            number1 += "7";
         }else if (operador != null && resultado == null){
-            number2 = "7";
+            number2 += "7";
         }else if (operador != null && resultado != null){
-            number3 = "7";
+            number3 += "7";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "7");
@@ -219,11 +234,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickOito(View view){
         if (operador == null && resultado == null){
-            number1 = "8";
+            number1 += "8";
         }else if (operador != null && resultado == null){
-            number2 = "8";
+            number2 += "8";
         }else if (operador != null && resultado != null){
-            number3 = "8";
+            number3 += "8";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "8");
@@ -231,11 +246,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickNove(View view){
         if (operador == null && resultado == null){
-            number1 = "9";
+            number1 += "9";
         }else if (operador != null && resultado == null){
-            number2 = "9";
+            number2 += "9";
         }else if (operador != null && resultado != null){
-            number3 = "9";
+            number3 += "9";
         }
         String visor = textVisor.getText().toString();
         textVisor.setText(visor+ "9");
@@ -243,8 +258,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickC(View view){
         textVisor.setText("");
+        textResposta.setText("");
         number1 = "";
         number2 = "";
         number3 = "";
+        num1 = null;
+        num2 = null;
+        num3 = null;
+        operador = null;
+        resultado = null;
+        resul = null;
+
     }
 }
