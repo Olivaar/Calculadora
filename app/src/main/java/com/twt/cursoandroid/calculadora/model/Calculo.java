@@ -2,7 +2,7 @@ package com.twt.cursoandroid.calculadora.model;
 
 public class Calculo {
 
-    private Double num1, num2;
+    private Double num1, num2, resultado;
     private String operacao;
 
     public Calculo() {
@@ -38,10 +38,16 @@ public class Calculo {
         this.operacao = operacao;
     }
 
+    public Double getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(Double resultado) {
+        this.resultado = resultado;
+    }
 
     //TODO Validar método de soma
-    public Double calcular(Double num1, Double num2, String operacao){
-        Double resultado = null;
+    public Double calcular(){
         if (operacao.equals("+")){
             resultado = num1+num2;
         }else if (operacao.equals("-")){

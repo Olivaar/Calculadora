@@ -276,6 +276,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
         android:background="@color/Lime"
+        android:onClick="clickIgual"
         android:text="="
         android:textColor="#607D8B"
         android:textSize="34sp"
