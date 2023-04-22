@@ -2,8 +2,8 @@ package com.twt.cursoandroid.calculadora.model;
 
 public class Calculo {
 
-    private Double num1, num2, resultado;
-    private String operacao, resultadoString;
+    protected Double num1, num2, resultado;
+    private String operacao;
 
     public Calculo() {
     }
@@ -14,58 +14,32 @@ public class Calculo {
         this.operacao = operacao;
     }
 
-    public Double getNum1() {
-        return num1;
-    }
-
-    public void setNum1(Double num1) {
-        this.num1 = num1;
-    }
-
-    public Double getNum2() {
-        return num2;
-    }
-
-    public void setNum2(Double num2) {
-        this.num2 = num2;
-    }
-
-    public String getOperacao() {
-        return operacao;
-    }
-
-    public void setOperacao(String operacao) {
-        this.operacao = operacao;
-    }
 
     public Double getResultado() {
         return resultado;
     }
 
-    public void setResultado(Double resultado) {
-        this.resultado = resultado;
-    }
-
-    public String getResultadoString() {
-        return resultadoString;
-    }
-
-    public void setResultadoString(String resultadoString) {
-        this.resultadoString = resultadoString;
-    }
 
     //TODO Validar método de soma
-    public Double calcular(){
-        if (operacao.equals(" + ")){
-            resultado = num1+num2;
-        }else if (operacao.equals(" - ")){
-            resultado = num1-num2;
-        }else if (operacao.equals(" * ")){
-            resultado = num1*num2;
-        }else if (operacao.equals(" / ")){
-            resultado = num1/num2;
+    public void calcular(){
+
+        switch (operacao){
+            case " + ":
+                Soma soma = new Soma();
+                soma.somar();
+            break;
+            case " - ":
+                Subtracao subtracao = new Subtracao();
+                subtracao.subtrair();
+            break;
+            case " * ":
+                Multiplicacao multiplicacao = new Multiplicacao();
+                multiplicacao.multiplicar();
+            break;
+            case " / ":
+                Divisao divisao = new Divisao();
+                divisao.dividir();
+            break;
         }
-        resultadoString = resultado.toString();
-        return resultado;
     }
 }
